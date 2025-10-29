@@ -1,26 +1,24 @@
-import React from 'react';
-import Newslogo from '../Images/Newslogo.svg'; // High-quality SVG/PNG
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import Newslogo from "../Images/Newslogo.svg";
 
 const Header = () => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg shadow-sm py-3 custom-navbar">
         <div className="container d-flex align-items-center justify-content-between">
-
           {/* Left side: Logo */}
-          <a className="navbar-brand d-flex align-items-center gap-2" href="#">
-            <img
-              src={Newslogo}
-              alt="News Logo"
-              className="news-logo"
-            />
+          <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
+            <img src={Newslogo} alt="News Logo" className="news-logo" />
             <span className="d-lg-none fw-bold fs-5 text-white">BTV News</span>
-          </a>
+          </Link>
 
           {/* Center: Title & Subtitle (hidden on mobile) */}
           <div className="mx-auto text-center d-none d-lg-flex flex-column align-items-center">
             <h1 className="mb-0 fw-bold site-title">BTV MEDIA NEWS</h1>
-            <p className="mb-0 site-subtitle">Your Trusted Daily Source for Truth & Trends</p>
+            <p className="mb-0 site-subtitle">
+              Your Trusted Daily Source for Truth & Trends
+            </p>
           </div>
 
           {/* Right side: Toggler */}
@@ -41,54 +39,53 @@ const Header = () => {
         <div className="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNav">
           <ul className="navbar-nav ms-auto fw-semibold text-uppercase nav-list d-flex gap-3">
             <li className="nav-item">
-              <a className="nav-link active d-flex align-items-center gap-2" href="#">
+              <NavLink to="/" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-house-door"></i>Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/news" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-broadcast"></i>News
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/tech" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-cpu"></i>Tech
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/jobs" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-briefcase"></i>Jobs
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/sports" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-trophy"></i>Sports
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/entertainment" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-film"></i>Entertainment
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/contact" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-envelope"></i>Contact
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link d-flex align-items-center gap-2" href="#">
+              <NavLink to="/reporters" className="nav-link d-flex align-items-center gap-2">
                 <i className="bi bi-people"></i>Reporters
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
-
       </nav>
 
       {/* Custom styles */}
       <style jsx>{`
         .custom-navbar {
-          background: linear-gradient(to right, #001F3F, #0074D9);
+          background: linear-gradient(to right, #001f3f, #0074d9);
         }
 
         .news-logo {
@@ -98,14 +95,14 @@ const Header = () => {
         }
 
         .site-title {
-          font-family: 'Playfair Display', serif;
+          font-family: "Playfair Display", serif;
           font-size: 2.1rem;
           color: #ffffff;
           letter-spacing: 2px;
         }
 
         .site-subtitle {
-          font-family: 'Open Sans', sans-serif;
+          font-family: "Open Sans", sans-serif;
           font-size: 0.9rem;
           color: #d0d0d0;
           letter-spacing: 1px;
@@ -120,7 +117,8 @@ const Header = () => {
           font-size: 0.9rem;
         }
 
-        .nav-list .nav-link:hover {
+        .nav-list .nav-link:hover,
+        .nav-list .nav-link.active {
           background-color: rgba(255, 255, 255, 0.15);
           color: #ffd700 !important;
         }
@@ -129,9 +127,9 @@ const Header = () => {
           font-size: 1.1rem;
         }
 
-        /* Reduce gaps on smaller screens */
         @media (max-width: 991px) {
-          .site-title, .site-subtitle {
+          .site-title,
+          .site-subtitle {
             display: none;
           }
 
