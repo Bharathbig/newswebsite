@@ -83,7 +83,7 @@ const Header = () => {
       </nav>
 
       {/* Custom styles */}
-      <style jsx>{`
+      <style>{`
         .custom-navbar {
           background: linear-gradient(to right, #001f3f, #0074d9);
         }

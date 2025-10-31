@@ -30,7 +30,7 @@ const featuredNews = [
   {
     id: 4,
     title: 'Baahubali vanishes from OTT: SS Rajamouli pauses his current film for THIS reason',
-    summary: 'Prabhas and Anushka Shetty, who played the leads in SS Rajamouli’s magnum opus Baahubali, are all set to reunite on screen after 8 years. Yes, you read that right! The beloved duo of Indian cinema is back, and fans can’t keep calm about this exciting update. Their sparkling chemistry in Baahubali: The Beginning and its sequel Baahubali: The Conclusion won immense love and praise from audiences.',
+    summary: 'Prabhas and Anushka Shetty who played the leads in SS Rajamouli magnum opus Baahubali are all set to reunite on screen after 8 years. Yes you read that right! The beloved duo of Indian cinema is back and fans cannot keep calm about this exciting update. Their sparkling chemistry in Baahubali The Beginning and its sequel Baahubali The Conclusion won immense love and praise from audiences.',
     image: News3,
     category: 'Entertainment',
   },
@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <main className="homepage">
       {/* Hero Section */}
-      <section className="hero-section text-center text-white py-5 px-3">
+      <section className="hero-section text-center text-white py-5 px-3 container my-4">
         <h2>Welcome to BTV MEDIA NEWS</h2>
         <p className="lead mt-3">Stay informed with the latest updates in Tech, Sports, Jobs, and Entertainment</p>
         <a href="#featured" className="btn btn-warning btn-lg mt-4">Explore Featured News</a>
@@ -61,7 +61,7 @@ const Home = () => {
               <div className="card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
                 <img src={news.image} className="card-img-top" alt={news.title} />
                 <div className="card-body d-flex flex-column">
-                  <span className="badge bg-gradient-primary text-uppercase mb-2 align-self-start">{news.category}</span>
+                  <span className="badge bg-primary text-uppercase mb-2 align-self-start">{news.category}</span>
                   <h5 className="card-title fw-bold">{news.title}</h5>
                   <p className="card-text text-secondary flex-grow-1">{news.summary.substring(0, 120)}...</p>
                   <button onClick={() => handleReadMore(news)} className="btn btn-outline-primary mt-auto rounded-pill">Read More</button>
@@ -95,11 +95,17 @@ const Home = () => {
 
      
       {/* Styles */}
-      <style jsx>{`
+      <style>{`
+        .homepage {
+          padding-top: 1rem;
+          min-height: 100vh;
+        }
+
         .hero-section {
           background: linear-gradient(135deg, #003366, #0055a5);
           border-radius: 12px;
-          box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+          margin-top: 1rem;
         }
 
         .card-img-top {
@@ -122,9 +128,17 @@ const Home = () => {
           border-color: #0055a5;
         }
 
+        .badge.bg-primary {
+          background-color: #0055a5 !important;
+        }
+
         @media (max-width: 767px) {
           .card-img-top {
             height: 150px;
+          }
+          
+          .hero-section {
+            margin-top: 0.5rem;
           }
         }
       `}</style>
@@ -133,4 +147,3 @@ const Home = () => {
 };
 
 export default Home;
-

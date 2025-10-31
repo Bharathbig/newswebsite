@@ -11,7 +11,7 @@ const Sports = () => {
       category: "Cricket",
       date: "October 30, 2025",
       description:
-        "In an electrifying match, India secured a narrow win over Australia in the final over. Rohit Sharma’s brilliant 85 and Bumrah’s death bowling sealed the victory. This win marks India’s third consecutive series triumph against Australia this season.",
+        "In an electrifying match, India secured a narrow win over Australia in the final over. Rohit Sharma's brilliant 85 and Bumrah's death bowling sealed the victory. This win marks India's third consecutive series triumph against Australia this season.",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Sports = () => {
       category: "Football",
       date: "October 29, 2025",
       description:
-        "Lionel Messi dazzled the crowd with a stunning hat-trick as Inter Miami defeated LA Galaxy 3–1 in a Major League Soccer showdown. Messi’s performance keeps Miami at the top of the table and continues his incredible goal-scoring form.",
+        "Lionel Messi dazzled the crowd with a stunning hat-trick as Inter Miami defeated LA Galaxy 3–1 in a Major League Soccer showdown. Messi's performance keeps Miami at the top of the table and continues his incredible goal-scoring form.",
     },
     {
       id: 3,
@@ -147,7 +147,7 @@ const Sports = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .section-title {
           color: #8b0000;
           letter-spacing: 1px;

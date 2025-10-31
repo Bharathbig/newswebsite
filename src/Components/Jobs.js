@@ -12,7 +12,7 @@ const Jobs = () => {
       image:
         "https://images.unsplash.com/photo-1581091870627-3c52a30a91b4?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We’re looking for a skilled React.js developer to join our growing engineering team and build engaging web experiences. You’ll collaborate with designers and backend developers to create scalable, performant applications using modern front-end technologies.",
+        "We're looking for a skilled React.js developer to join our growing engineering team and build engaging web experiences. You'll collaborate with designers and backend developers to create scalable, performant applications using modern front-end technologies.",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const Jobs = () => {
       image:
         "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80",
       description:
-        "We’re hiring creative designers to craft delightful user experiences for mobile and web products. Candidates should be skilled in Figma or Adobe XD and have a strong portfolio of design work.",
+        "We're hiring creative designers to craft delightful user experiences for mobile and web products. Candidates should be skilled in Figma or Adobe XD and have a strong portfolio of design work.",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Jobs = () => {
       image:
         "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       description:
-        "Develop scalable APIs and cloud services using Node.js, Express, and MongoDB. Experience with AWS is a plus. You’ll work closely with frontend teams to ensure seamless integration of APIs.",
+        "Develop scalable APIs and cloud services using Node.js, Express, and MongoDB. Experience with AWS is a plus. You'll work closely with frontend teams to ensure seamless integration of APIs.",
     },
   ]);
 
@@ -159,7 +159,7 @@ const Jobs = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .section-title {
           color: #155724;
           letter-spacing: 1px;

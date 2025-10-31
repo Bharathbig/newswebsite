@@ -146,7 +146,7 @@ const Tech = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .section-title {
           color: #004085;
           letter-spacing: 1px;

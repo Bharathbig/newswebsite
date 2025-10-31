@@ -14,7 +14,7 @@ const Reporters = () => {
       contact: "+91 9642520584",
       role: "State Editor",
       description:
-        "As the Andhra Pradesh State Editor, Bharath leads the editorial team with a focus on accurate and timely regional coverage. His deep understanding of local politics and culture helps shape the publication’s voice in the state.",
+        "As the Andhra Pradesh State Editor, Bharath leads the editorial team with a focus on accurate and timely regional coverage. His deep understanding of local politics and culture helps shape the publication's voice in the state.",
     },
     {
       id: "25002",
@@ -168,7 +168,7 @@ const Reporters = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .section-title {
           color: #001f3f;
           letter-spacing: 1px;

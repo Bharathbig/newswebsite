@@ -21,7 +21,7 @@ const News = () => {
       category: "Technology",
       date: "October 29, 2025",
       description:
-        "A new AI-powered search engine redefines how information is accessed — delivering context-aware, conversational answers. The technology promises to revolutionize how users interact with the web, providing personalized, precise, and verified information faster than ever before.",
+        "A new AI-powered search engine redefines how information is accessed – delivering context-aware, conversational answers. The technology promises to revolutionize how users interact with the web, providing personalized, precise, and verified information faster than ever before.",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ const News = () => {
       category: "Science",
       date: "October 27, 2025",
       description:
-        "NASA’s latest space telescope transmitted breathtaking images of distant galaxies, providing new insights into cosmic evolution. Astronomers say these images could help answer key questions about the origins of the universe and dark matter.",
+        "NASA's latest space telescope transmitted breathtaking images of distant galaxies, providing new insights into cosmic evolution. Astronomers say these images could help answer key questions about the origins of the universe and dark matter.",
     },
   ]);
 
@@ -152,7 +152,7 @@ const News = () => {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .section-title {
           color: #001f3f;
           letter-spacing: 1px;
