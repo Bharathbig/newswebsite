@@ -1,15 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/header";
 import Home from "./components/Home";
 import News from "./components/News";
 import Sports from "./components/Sports";
 import Tech from "./components/Tech";
 import Jobs from "./components/Jobs";
-import Entertainment from "./components/Entertainment";
-import Contact from "./components/Contact";
+import Entertainment from "./components/entertainment";
+import Contact from "./components/contact";
 import Reporters from "./components/Reporters";
+
+
 
 const App = () => (
   <Router>
@@ -27,7 +28,7 @@ const App = () => (
           <Route path="/reporters" element={<Reporters />} />
         </Routes>
       </main>
-      <Footer />
+
     </div>
   </Router>
 );
