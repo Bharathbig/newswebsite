@@ -32,15 +32,16 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/header";
-import Home from "./components/home";
-import News from "./components/news";
-import Sports from "./components/sports";
-import Tech from "./components/tech";
-import Jobs from "./components/jobs";
-import Entertainment from "./components/entertainment";
-import Contact from "./components/contact";
-import Reporters from "./components/reporters";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import News from "./components/News";
+import Sports from "./components/Sports";
+import Tech from "./components/Tech";
+import Jobs from "./components/Jobs";
+import Entertainment from "./components/Entertainment";
+import Contact from "./components/Contact";
+import Reporters from "./components/Reporters";
+
 
 const App = () => (
   <Router>
