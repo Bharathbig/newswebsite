@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const News = () => {
-  // Example static news data — you can replace this with API data later
-  const [latestNews, setLatestNews] = useState([
+  const [latestNews] = useState([
     {
       id: 1,
       title: "Global Summit 2025: World Leaders Pledge Climate Action",
@@ -11,7 +11,7 @@ const News = () => {
       category: "World",
       date: "October 30, 2025",
       description:
-        "In a historic gathering, world leaders committed to aggressive carbon reduction targets aiming to achieve net-zero emissions by 2040.",
+        "In a historic gathering, world leaders committed to aggressive carbon reduction targets aiming to achieve net-zero emissions by 2040. The summit marked a turning point in international cooperation, with significant pledges from major economies to invest in renewable energy, carbon capture technology, and sustainable infrastructure.",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const News = () => {
       category: "Technology",
       date: "October 29, 2025",
       description:
-        "A new AI-powered search engine redefines how information is accessed — delivering context-aware, conversational answers.",
+        "A new AI-powered search engine redefines how information is accessed — delivering context-aware, conversational answers. The technology promises to revolutionize how users interact with the web, providing personalized, precise, and verified information faster than ever before.",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const News = () => {
       category: "Business",
       date: "October 28, 2025",
       description:
-        "Global markets surged today following reports of cooling inflation and optimistic forecasts for economic recovery.",
+        "Global markets surged today following reports of cooling inflation and optimistic forecasts for economic recovery. Analysts expect this trend to stabilize investor sentiment and encourage higher spending levels worldwide.",
     },
     {
       id: 4,
@@ -41,12 +41,22 @@ const News = () => {
       category: "Science",
       date: "October 27, 2025",
       description:
-        "NASA’s latest space telescope transmitted breathtaking images of distant galaxies, providing new insights into cosmic evolution.",
+        "NASA’s latest space telescope transmitted breathtaking images of distant galaxies, providing new insights into cosmic evolution. Astronomers say these images could help answer key questions about the origins of the universe and dark matter.",
     },
   ]);
 
+  const [selectedNews, setSelectedNews] = useState(null);
+
+  const handleReadMore = (news) => {
+    setSelectedNews(news);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedNews(null);
+  };
+
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top on page load
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -75,16 +85,72 @@ const News = () => {
                     <i className="bi bi-calendar-date me-1"></i>
                     {news.date}
                   </p>
-                  <p className="card-text flex-grow-1">{news.description}</p>
-                  <a href="#" className="btn btn-outline-primary mt-auto">
+                  <p className="card-text flex-grow-1">
+                    {news.description.length > 100
+                      ? news.description.slice(0, 100) + "..."
+                      : news.description}
+                  </p>
+                  <button
+                    className="btn btn-outline-primary mt-auto"
+                    onClick={() => handleReadMore(news)}
+                  >
                     Read More
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* MODAL */}
+      {selectedNews && (
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          role="dialog"
+          style={{ background: "rgba(0,0,0,0.6)" }}
+        >
+          <div
+            className="modal-dialog modal-dialog-centered modal-lg"
+            role="document"
+          >
+            <div className="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
+              <div className="modal-header border-0 pb-0">
+                <h5 className="modal-title fw-bold">{selectedNews.title}</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleCloseModal}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <img
+                  src={selectedNews.image}
+                  alt={selectedNews.title}
+                  className="img-fluid rounded mb-3"
+                />
+                <p className="text-muted small mb-2">
+                  <i className="bi bi-calendar-date me-1"></i>
+                  {selectedNews.date} •{" "}
+                  <span className="badge bg-primary">
+                    {selectedNews.category}
+                  </span>
+                </p>
+                <p>{selectedNews.description}</p>
+              </div>
+              <div className="modal-footer border-0">
+                <button
+                  className="btn btn-secondary rounded-pill"
+                  onClick={handleCloseModal}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .section-title {
@@ -94,13 +160,14 @@ const News = () => {
 
         .news-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-          border-radius: 12px;
+          border-radius: 16px;
           overflow: hidden;
+          background: #fff;
         }
 
         .news-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .news-card img {
@@ -108,18 +175,17 @@ const News = () => {
           object-fit: cover;
         }
 
-        .card-title {
-          color: #001f3f;
-        }
-
         .btn-outline-primary {
           color: #001f3f;
           border-color: #001f3f;
+          transition: all 0.3s ease;
+          font-weight: 500;
         }
 
         .btn-outline-primary:hover {
           background-color: #001f3f;
           color: #fff;
+          transform: scale(1.03);
         }
       `}</style>
     </section>
